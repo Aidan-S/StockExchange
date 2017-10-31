@@ -28,7 +28,7 @@ public class Stock implements Comparable<Stock> {
 	}
 	
 	public int compareTo(Stock s) {
-		return lastPrice;
+		return (int)lastPrice;
 	}
 	
 	public void placeOrder(TradeOrder order) {

@@ -20,24 +20,26 @@ public class Brokerage implements Login {
 		len = password.length();
 		if(len < 2 || len > 10)
 			return -2;
-		if(registeredTraders.containsKey(name))return -3;
+		if(registeredTraders.containsKey(name))
+			return -3;
 		
-		
-		registeredTraders.add(name, new Trader(this, name, password));
-		registeredTraders.put(name, trader);
+		registeredTraders.put(name, new Trader(this, name, password));
 		return 0;
 	}
 
 	@Override
 	public int login(String name, String password) {
-		Traders trader = registeredTraders.get(name);
+		Trader trader = registeredTraders.get(name);
 		if(trader == null)
 			return -1;
 		String storedPassword = trader.getPassword();
 		if(!storedPassword.equals(password))
 			return -2;
-		if(!storedPassword.equals(password))
+		if(storedPassword.equals(password))
+			return 0;
+		if(loggedInTraders.contains(trader))
 			return -3;
+		return -4;
 	}
 	
 	
