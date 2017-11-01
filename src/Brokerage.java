@@ -35,12 +35,18 @@ public class Brokerage implements Login {
 		String storedPassword = trader.getPassword();
 		if(!storedPassword.equals(password))
 			return -2;
-		if(storedPassword.equals(password))
+		if(storedPassword.equals(password)) {
+			loggedInTraders.add(trader);
 			return 0;
+		}
 		if(loggedInTraders.contains(trader))
 			return -3;
 		return -4;
 	}
 	
+	public void logout(String name) {
+		Trader trader = registeredTraders.get(name);
+		loggedInTraders.remove(trader);
+	}
 	
 }
