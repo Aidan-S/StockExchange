@@ -14,14 +14,12 @@ public class Stock implements Comparable<Stock> {
 
 
 	Stock (String s, String n, double p){
-		
 		symbol = s;
 		name = n;
 		lowPrice = p;
 		lastPrice = p;
 		highPrice = p;
-		dayVolume = 0;
-		
+		dayVolume = 0;	
 	}
 
 	public String toString() {
@@ -33,7 +31,9 @@ public class Stock implements Comparable<Stock> {
 	}
 	
 	public String getQuote() {
-		return name + " (" + symbol + ") " + "\n" + "Price: " + money.format(lastPrice) + " HI: " + money.format(highPrice);
+		return name + " (" + symbol + ") " + "\n" + "Price: " + money.format(lastPrice) + " HI: " + money.format(highPrice) + 
+				" lo: " + money.format(lowPrice) + " vol: " + dayVolume + "\n" + "Ask: " + "IDK WHAT TO PUT" + " size: " +
+				"asd;asd" + " Bid: " + "adasdas" + " size: " + "dfilejw";
 	}
 	
 	public void placeOrder(TradeOrder order) {

@@ -25,6 +25,54 @@ public class TradeOrder {
 		
 	}
 	
+	public Trader getTrader() {
+		return trader;
+	}
+	
+	public String getSymbol(){
+		return symbol;
+	}
+	
+	public boolean isBuy(){
+		if(buy) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean isSell(){
+		if(!buy) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean isMarket(){
+		if(market) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public boolean isLimit(){
+		if(!market) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public int getShares() {
+		return numShares;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+	
 	@Override
 	public String toString() {
 		String buyOrSell, marketOrLimit;
