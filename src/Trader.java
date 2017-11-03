@@ -28,4 +28,28 @@ public class Trader {
 		return username;
 	}
 	
+	public getQuote() {
+		
+	}
+	
+	public openWindow() {
+		
+	}
+	
+	public hasMessage() {
+		
+	}
+	
+	public receiveMessage() {
+		
+	}
+	
+	public placeOrder() {
+		
+	}
+	
+	public void quit() {
+		
+	}
+	
 }

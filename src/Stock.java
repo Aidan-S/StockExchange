@@ -23,7 +23,8 @@ public class Stock implements Comparable<Stock> {
 	}
 
 	public String toString() {
-		return symbol + ", " + name + ", " + money.format(lastPrice);
+		return name + " (" + symbol + ") " + "\n" + "Price: " + money.format(lastPrice) + " HI: " + money.format(highPrice) + 
+				" lo: " + money.format(lowPrice) + " vol: " + dayVolume;
 	}
 	
 	public int compareTo(Stock s) {
@@ -37,7 +38,14 @@ public class Stock implements Comparable<Stock> {
 	}
 	
 	public void placeOrder(TradeOrder order) {
+		if(order.isBuy()) {
+			buyOrders.add(order);
+			System.out.println("New Order: Buy " + symbol + " (" + name + ")" + "\n" + order.getShares()  + " shares at " + order.getPrice());
+		}else {
+			sellOrders.add(order);
+			System.out.println("New Order: Sell " + symbol + " (" + name + ")" + "\n" + order.getShares()  + " shares at market");
 		
+		}
 	}
 	
 }
