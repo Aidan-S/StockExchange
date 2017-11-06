@@ -83,6 +83,12 @@ public class TradeOrder {
 				+ ", buy=" + buyOrSell + ", market=" + marketOrLimit + "]";
 	}
 	
-	
+	public void subtractShares(int shares){
+		if(numShares-shares > 0 ) {
+			numShares -= shares; 
+		}else{
+			System.out.println("java.lang.IllegalArgumentException");
+		}
+	}
 	
 }

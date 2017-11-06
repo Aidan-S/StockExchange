@@ -13,4 +13,8 @@ public class StockExchange {
 		Stock s = new Stock(symbol, name, price);
 	}
 	
+	public void placeOrder(TradeOrder order) {
+		Stock.placeOrder(order);
+	}
+	
 }

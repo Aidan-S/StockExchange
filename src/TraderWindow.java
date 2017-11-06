@@ -281,8 +281,7 @@ public class TraderWindow extends JFrame
       return;
     }
 
-    TradeOrder tradeOrder = new TradeOrder(myTrader, symbol, buyOrder,
-                   marketOrder, numShares, price);
+    TradeOrder tradeOrder = new TradeOrder(myTrader, symbol, buyOrder, numShares, marketOrder, price);
     myTrader.placeOrder(tradeOrder);
   }
 }

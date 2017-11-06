@@ -1,4 +1,4 @@
-
+//Aidan Scannell
 public class PriceComparator {
 	
 	public boolean asc;
@@ -22,9 +22,9 @@ public class PriceComparator {
 			return 1;
 		}
 		if(asc) {
-			return (int)((order1.getPrice() - order2.getPrice()) * 100);
+			return (int)((order1.getPrice() - order2.getPrice()) * 100 + .5);
 		}else {
-			return (int)((order2.getPrice() - order1.getPrice()) * 100);
+			return (int)((order2.getPrice() - order1.getPrice()) * 100 + .5);
 		}
 	}
 	
